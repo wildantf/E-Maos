@@ -1,0 +1,2 @@
+rootProject.name='E-Maos'
+include ':app'

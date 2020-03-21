@@ -3,41 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_library">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.dicoding.picodiploma.e_maos.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home">
+        android:id="@+id/nav_library"
+        android:name="com.dicoding.picodiploma.e_maos.ui.library.LibraryFragment"
+        android:label="@string/menu_library"
+        tools:layout="@layout/fragment_library">
 
-        <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
+<!--        <action-->
+<!--            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"-->
+<!--            app:destination="@id/nav_home_second" />-->
     </fragment>
-    <fragment
-        android:id="@+id/nav_home_second"
-        android:name="com.dicoding.picodiploma.e_maos.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
-        <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
+<!--    <fragment-->
+<!--        android:id="@+id/nav_home_second"-->
+<!--        android:name="com.dicoding.picodiploma.e_maos.ui.home.HomeSecondFragment"-->
+<!--        android:label="@string/home_second"-->
+<!--        tools:layout="@layout/fragment_home_second">-->
+<!--        <action-->
+<!--            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"-->
+<!--            app:destination="@id/nav_home" />-->
 
-        <argument
-            android:name="myArg"
-            app:argType="string" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.dicoding.picodiploma.e_maos.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+<!--        <argument-->
+<!--            android:name="myArg"-->
+<!--            app:argType="string" />-->
+<!--    </fragment>-->
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.dicoding.picodiploma.e_maos.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_borrowing_history"
+        android:name="com.dicoding.picodiploma.e_maos.ui.borrowing_history.BorrowingHistoryFragment"
+        android:label="@string/menu_borrowing_history"
+        tools:layout="@layout/fragment_borrowing_history" />
+
+    <fragment
+        android:id="@+id/nav_account_profile"
+        android:name="com.dicoding.picodiploma.e_maos.ui.account_profile.AccountProfileFragment"
+        android:label="@string/menu_account_profile"
+        tools:layout="@layout/fragment_account_profile" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.dicoding.picodiploma.e_maos.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>

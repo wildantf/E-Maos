@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.e_maos.ui.slideshow;
+package com.dicoding.picodiploma.e_maos.ui.library;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.dicoding.picodiploma.e_maos.R;
 
-public class SlideshowFragment extends Fragment {
+public class LibraryFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private LibraryViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        homeViewModel =
+                ViewModelProviders.of(this).get(LibraryViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_library, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

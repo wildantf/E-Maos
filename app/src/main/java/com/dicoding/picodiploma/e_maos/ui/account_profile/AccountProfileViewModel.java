@@ -1,16 +1,16 @@
-package com.dicoding.picodiploma.e_maos.ui.home;
+package com.dicoding.picodiploma.e_maos.ui.account_profile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class AccountProfileViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public AccountProfileViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is account profile fragment");
     }
 
     public LiveData<String> getText() {

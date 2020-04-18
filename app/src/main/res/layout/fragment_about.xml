@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11"
         tools:ignore="MissingConstraints" />
 
-    <view
+    <TextView
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="1dp"

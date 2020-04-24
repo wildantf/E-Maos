@@ -30,4 +30,8 @@
     <string name="tab_ebook">E-Book</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="e_book">E-Book</string>
+    <string name="buku_offline">Buku Offline</string>
+    <string name="book_title">Data Science For Beginners</string>
+    <string name="Buku">Picture</string>
 </resources>

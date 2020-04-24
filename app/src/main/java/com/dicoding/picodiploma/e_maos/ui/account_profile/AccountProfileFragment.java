@@ -15,7 +15,6 @@ import androidx.lifecycle.ViewModelProviders;
 import com.dicoding.picodiploma.e_maos.R;
 
 public class AccountProfileFragment extends Fragment {
-
     private AccountProfileViewModel accountProfileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

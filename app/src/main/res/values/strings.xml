@@ -34,4 +34,6 @@
     <string name="buku_offline">Buku Offline</string>
     <string name="book_title">Data Science For Beginners</string>
     <string name="Buku">Picture</string>
+    <string name="Writer">Wildan Tamma Faza Chair</string>
+    <string name="Stock">Stock : 0/100</string>
 </resources>

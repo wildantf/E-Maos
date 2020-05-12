@@ -1,20 +1,30 @@
 package com.dicoding.picodiploma.e_maos.ui.library;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
+import com.dicoding.picodiploma.e_maos.MainActivity;
 import com.dicoding.picodiploma.e_maos.R;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.Objects;
 
 public class LibraryFragment extends Fragment {
     String[] tabarray= new String[]{"Buku Offline","E-Book"};
@@ -45,8 +55,14 @@ public class LibraryFragment extends Fragment {
                 tabLayout.setupWithViewPager(viewPager);
             }
         });
+
+
         return root;
     }
+
+
+
+
     class tabpagerAdapter extends FragmentStatePagerAdapter {
         public tabpagerAdapter(@NonNull FragmentManager fm) {
             super(fm);

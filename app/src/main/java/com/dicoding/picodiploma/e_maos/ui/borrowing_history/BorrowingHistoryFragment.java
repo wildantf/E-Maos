@@ -23,14 +23,14 @@ public class BorrowingHistoryFragment extends Fragment {
         borrowingHistoryViewModel =
                 ViewModelProviders.of(this).get(BorrowingHistoryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_borrowing_history, container, false);
-        final TextView textView = root.findViewById(R.id.text_borrowing_history);
-//        ISI
-        borrowingHistoryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+//        final TextView textView = root.findViewById(R.id.text_borrowing_history);
+////        ISI
+//        borrowingHistoryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
         return root;
     }
 }

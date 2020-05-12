@@ -24,7 +24,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-
     <!-- Tabbed Menu -->
     <string name="tab_library">Library</string>
     <string name="tab_ebook">E-Book</string>
@@ -34,6 +33,7 @@
     <string name="buku_offline">Buku Offline</string>
     <string name="book_title">Data Science For Beginners</string>
     <string name="Buku">Picture</string>
-    <string name="Writer">Wildan Tamma Faza Chair</string>
+    <string name="Writer">Herman Dzumavo</string>
     <string name="Stock">Stock : 0/100</string>
+    <string name="book_publisher">Sumerracon Agung</string>
 </resources>

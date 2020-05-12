@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.tabs.TabLayout
@@ -31,9 +31,5 @@
                 android:layout_height="wrap_content"
                 android:text="@string/e_book" />
         </com.google.android.material.tabs.TabLayout>
-
-
     </com.google.android.material.appbar.AppBarLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

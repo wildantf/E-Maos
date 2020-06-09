@@ -12,7 +12,11 @@
     android:layout_height="wrap_content"
     android:weightSum="10"
     android:orientation="vertical">
-    <GridLayout
+        <Spinner
+            android:id="@+id/spinner"
+            style="@style/spinner_style"
+            android:entries="@array/book_genre"/>
+        <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="8"

@@ -36,4 +36,16 @@
     <string name="Writer">Herman Dzumavo</string>
     <string name="Stock">Stock : 0/100</string>
     <string name="book_publisher">Sumerracon Agung</string>
+
+
+    <string-array name="book_genre">
+        <item>Adult Fiction</item>
+        <item>Art, Music and Photography</item>
+        <item>Automotive and Motorcycles</item>
+        <item>Biographies and Memoirs</item>
+        <item>Buddishm and Hinduism</item>
+        <item>Business and Investing</item>
+        <item>Catalogue</item>
+        <item>Children Age 8-12</item>
+    </string-array>
 </resources>

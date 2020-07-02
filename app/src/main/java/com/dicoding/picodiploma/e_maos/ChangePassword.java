@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.dicoding.picodiploma.e_maos.ui.login.LoginActivity;
-
-public class changePassword extends AppCompatActivity {
+public class ChangePassword extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +18,7 @@ public class changePassword extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(changePassword.this, LoginActivity.class);
+                Intent login = new Intent(ChangePassword.this, LoginActivity.class);
                 startActivity(login);
             }
         });

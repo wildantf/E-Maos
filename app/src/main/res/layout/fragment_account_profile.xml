@@ -6,37 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.account_profile.AccountProfileFragment">
 
-<!--    <TextView-->
-<!--        android:id="@+id/text_slideshow"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:gravity="center_horizontal" />-->
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/textView_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
         android:background="@color/white"
+        android:textColor="@color/black"
         android:gravity="start"
         android:lineSpacingExtra="10dp"
         android:paddingLeft="15dp"
@@ -45,119 +21,75 @@
         android:paddingBottom="10dp"
         android:text="Nama Lengkap\nE-Maos"
         android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.261"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button4"
+    <TextView
+        android:id="@+id/textView_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:textColor="@color/black"
         android:gravity="start"
         android:lineSpacingExtra="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:paddingLeft="15dp"
+        android:paddingTop="10dp"
         android:paddingRight="15dp"
+        android:paddingBottom="10dp"
         android:text="Email\nE-Maos@gmail.com"
         android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toBottomOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/textView_name"
+        app:layout_constraintVertical_bias="0.101"
         tools:ignore="MissingConstraints" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button3"
+    <TextView
+        android:id="@+id/textView_changePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
         android:background="@color/white"
+        android:textColor="@color/black"
         android:gravity="start"
         android:lineSpacingExtra="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:paddingLeft="15dp"
+        android:paddingTop="10dp"
         android:paddingRight="15dp"
+        android:paddingBottom="10dp"
         android:text="Ganti Kata Sandi"
         android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_email"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        android:clickable="true"/>
 
-    <View
-        android:id="@+id/view5"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        tools:ignore="MissingConstraints" />
-
-    <View
-        android:id="@+id/view4"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="@+id/button5"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button5"
+    <TextView
+        android:id="@+id/textView_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:textColor="@color/red"
         android:background="@color/white"
         android:gravity="start"
         android:lineSpacingExtra="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:paddingLeft="15dp"
+        android:paddingTop="10dp"
         android:paddingRight="15dp"
+        android:paddingBottom="10dp"
         android:text="Keluar dari akun"
         android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/textView_name"
+        app:layout_constraintVertical_bias="0.673"
+        tools:ignore="MissingConstraints"
+        android:clickable="true"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

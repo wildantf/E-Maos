@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.dicoding.picodiploma.e_maos.ui.login.LoginActivity;
-
-public class siginOrRegister extends AppCompatActivity {
+public class SiginOrRegister extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +18,7 @@ public class siginOrRegister extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(siginOrRegister.this, LoginActivity.class);
+                Intent login = new Intent(SiginOrRegister.this, LoginActivity.class);
                 startActivity(login);
             }
         });

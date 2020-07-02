@@ -15,57 +15,65 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE session(id integer PRIMARY KEY, login text)");
         db.execSQL("CREATE TABLE user(id integer PRIMARY KEY AUTOINCREMENT, username text, password text)");
-        db.execSQL("INSERT INTO session(id, login) VALUES(1,'kosong')");
+        db.execSQL("INSERT INTO session(id, login) VALUES(1, 'kosong')");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS session");
         db.execSQL("DROP TABLE IF EXISTS user");
+        onCreate(db);
     }
-//    method cek session
-    public boolean checkSession(String sessionValues){
+
+    //check session
+    public Boolean checkSession(String sessionValues) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM session WHERE login = ?", new String[]{sessionValues});
-        if (cursor.getCount()>0) {
+        if (cursor.getCount() > 0) {
             return true;
-        }else{
+        }
+        else {
             return false;
         }
     }
+
     //upgrade session
-    public Boolean upgradeSession(String sessionValues, int id){
+    public Boolean upgradeSession(String sessionValues, int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("login",sessionValues);
-        long update=db.update("session", contentValues, "id", null);
-        if(update==-1){
+        contentValues.put("login", sessionValues);
+        long update = db.update("session", contentValues, "id="+id, null);
+        if (update == -1) {
             return false;
-        }else {
+        }
+        else {
             return true;
         }
     }
 
-//    Insert User
-    public Boolean insertUser(String username, String password){
-        SQLiteDatabase db= this.getWritableDatabase();
+    //insert user
+    public Boolean insertUser(String username, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("username",username);
-        contentValues.put("passwored",password);
+        contentValues.put("username", username);
+        contentValues.put("password", password);
         long insert = db.insert("user", null, contentValues);
-        if (insert == -1){
+        if (insert == -1) {
             return false;
-        }else {
+        }
+        else {
             return true;
         }
-   }
-//   check login
-    public Boolean checkLogin(String username, String password){
-        SQLiteDatabase db= this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM user WHERE username = ? AND password = ? ", new String[]{username,password});
-        if (cursor.getCount()>0){
+    }
+
+    //check login
+    public Boolean checkLogin(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM user WHERE username = ? AND password = ?", new String[]{username, password});
+        if (cursor.getCount() > 0) {
             return true;
-        }else {
+        }
+        else {
             return false;
         }
     }

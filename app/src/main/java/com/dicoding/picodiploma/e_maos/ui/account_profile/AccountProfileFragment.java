@@ -5,42 +5,43 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
+import com.dicoding.picodiploma.e_maos.DatabaseHelper;
+import com.dicoding.picodiploma.e_maos.LoginActivity;
 import com.dicoding.picodiploma.e_maos.R;
-import com.dicoding.picodiploma.e_maos.changePassword;
-import com.dicoding.picodiploma.e_maos.siginOrRegister;
+import com.dicoding.picodiploma.e_maos.ChangePassword;
 
 public class AccountProfileFragment extends Fragment {
-    private AccountProfileViewModel accountProfileViewModel;
 
-    Intent logout;
-    Intent changePass;
+    DatabaseHelper db;
+    TextView logout,btnchangePass;
+
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        accountProfileViewModel =
-                ViewModelProviders.of(this).get(AccountProfileViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_account_profile, container, false);
 
-        logout = new Intent(getActivity(), siginOrRegister.class);
-        changePass = new Intent(getActivity(), changePassword.class);
+        final Intent changePass = new Intent(getActivity(), ChangePassword.class);
 
-        final Button btnLogout = root.findViewById(R.id.button5);
-        final Button btnchangePass = root.findViewById(R.id.button3);
+        logout = root.findViewById(R.id.textView_logout);
+        btnchangePass = root.findViewById(R.id.textView_changePassword);
 
-        btnLogout.setOnClickListener(new View.OnClickListener(){
-
+        logout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(logout);
+                Boolean updtSession = db.upgradeSession("kosong",1);
+                if(updtSession==true){
+                    Toast.makeText(getActivity().getApplicationContext(), "berhasil keluar", Toast.LENGTH_SHORT).show();
+                    Intent loginIntent= new Intent(getActivity(), LoginActivity.class);
+                    startActivity(loginIntent);
+                }
             }
         });
 

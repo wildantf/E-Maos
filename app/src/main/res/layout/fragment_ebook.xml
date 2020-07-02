@@ -55,7 +55,7 @@
                         android:layout_gravity="center_horizontal"
                         android:autoSizeTextType="uniform"
                         android:maxLines="1"
-                        android:text="@string/book_title"
+                        android:text="The 9 Habbits of Effective Blogger"
                         android:textColor="@color/black"
                         tools:ignore="RtlCompat" />
 

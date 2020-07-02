@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "1032208234519",
-    "firebase_url": "https://e-maos.firebaseio.com",
-    "project_id": "e-maos",
-    "storage_bucket": "e-maos.appspot.com"
+    "project_number": "924204429639",
+    "firebase_url": "https://e-maos-37b83.firebaseio.com",
+    "project_id": "e-maos-37b83",
+    "storage_bucket": "e-maos-37b83.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1032208234519:android:f7634fdf90c806eceec452",
+        "mobilesdk_app_id": "1:924204429639:android:ace0e4b0aab04d5d389c62",
         "android_client_info": {
           "package_name": "com.dicoding.picodiploma.e_maos"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1032208234519-13c3c3v440voub9m1vi8lbs2sqomf665.apps.googleusercontent.com",
+          "client_id": "924204429639-6vci4ia573na7dipqqv8b2l5687rv6v1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dicoding.picodiploma.e_maos",
+            "certificate_hash": "58468398160dc8517865a2994da40269b6012a27"
+          }
+        },
+        {
+          "client_id": "924204429639-s460l8pdpc486emmu3vo26p2j4aqd7ro.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBhRqG0W35744vwAIhm-_WZHgeZ1BJp7qA"
+          "current_key": "AIzaSyB4nHHcrZKfdjmpb28b91dDvdXFJSMItxQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1032208234519-13c3c3v440voub9m1vi8lbs2sqomf665.apps.googleusercontent.com",
+              "client_id": "924204429639-s460l8pdpc486emmu3vo26p2j4aqd7ro.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

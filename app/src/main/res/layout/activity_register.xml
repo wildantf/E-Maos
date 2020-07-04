@@ -65,7 +65,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sudah punya akun?"
+        android:text="Sudah punya akun? "
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,21 +81,22 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="92dp"
         android:layout_marginRight="92dp"
+        android:clickable="true"
         android:text="Masuk."
         android:textColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.915"
-        tools:ignore="MissingConstraints"
-        android:clickable="true"/>
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView_photoProfile"
         android:layout_width="192dp"
         android:layout_height="151dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -103,7 +104,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.081"
         app:srcCompat="@drawable/ic_person_blue_40dp"
-        tools:ignore="VectorDrawableCompat"
-        android:clickable="true"/>
+        tools:ignore="VectorDrawableCompat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

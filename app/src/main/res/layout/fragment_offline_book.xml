@@ -1,562 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context="com.dicoding.picodiploma.e_maos.ui.library.OfflineBook">
-    
-    <LinearLayout
+    tools:context="com.dicoding.picodiploma.e_maos.ui.library.OfflineBookFragment"
+    android:orientation="vertical">
+    <Spinner
+        android:id="@+id/spinner"
+        style="@style/spinner_style"
+        android:entries="@array/book_genre"/>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:padding="14dp"
+                android:rowCount="3"
+                tools:ignore="ExtraText">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="3dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginVertical="5dp"
+                        android:paddingHorizontal="5dp">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="150dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/python_ds" />
+                        <TextView
+                            android:id="@+id/textView_judulBuku"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_horizontal"
+                            android:autoSizeTextType="uniform"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            tools:ignore="RtlCompat" />
+                        <TextView
+                            android:id="@+id/textView_penulisBuku"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:textSize="8sp" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar_ratingBuku"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/customRatingBar"
+                            android:rating="4.5">
+                        </RatingBar>
+                        <TextView
+                            android:id="@+id/textView_perpustakaan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            </GridLayout>
+        </androidx.core.widget.NestedScrollView>
+<Button
+    android:id="@+id/btn_coba"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:weightSum="10"
-    android:orientation="vertical">
-        <Spinner
-            android:id="@+id/spinner"
-            style="@style/spinner_style"
-            android:entries="@array/book_genre"/>
-        <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="8"
-        android:alignmentMode="alignMargins"
-        android:columnCount="2"
-        android:columnOrderPreserved="false"
-        android:padding="14dp"
-        android:rowCount="3"
-        tools:ignore="ExtraText">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginVertical="5dp"
-                android:paddingHorizontal="5dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="150dp"
-                    android:layout_height="140dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/python_ds" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center_horizontal"
-                    android:autoSizeTextType="uniform"
-                    android:maxLines="1"
-                    android:text="@string/book_title"
-                    android:textColor="@color/black"
-                    tools:ignore="RtlCompat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Writer"
-                    android:textSize="8sp" />
-
-                <RatingBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/customRatingBar"
-                    android:numStars="5"
-                    android:rating="4.5">
-                </RatingBar>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:text="@string/Stock"
-                    android:textSize="8sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </GridLayout>
+    android:hint="coba"/>
 </LinearLayout>
-</ScrollView>

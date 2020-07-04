@@ -1,6 +1,6 @@
 package com.dicoding.picodiploma.e_maos;
-
 import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,13 +24,13 @@ public class  RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText etUsername, etDate, etEmail, etPassword, etCPassword;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         TextView login = findViewById(R.id.act_login);
-
         mAuth = FirebaseAuth.getInstance();
 
         final Button btnRegister = findViewById(R.id.btnregis);

@@ -65,6 +65,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/textView_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -75,6 +76,7 @@
         android:textColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:clickable="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

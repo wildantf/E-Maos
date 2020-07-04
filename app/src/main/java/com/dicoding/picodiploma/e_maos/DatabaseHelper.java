@@ -16,6 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE session(id integer PRIMARY KEY, login text)");
         db.execSQL("CREATE TABLE user(id integer PRIMARY KEY AUTOINCREMENT, username text, password text)");
         db.execSQL("INSERT INTO session(id, login) VALUES(1, 'kosong')");
+        db.execSQL("CREATE TABLE book(id integer PRIMARY KEY AUTOINCREMENT, nama_buku text, informasi text)");
     }
 
     @Override

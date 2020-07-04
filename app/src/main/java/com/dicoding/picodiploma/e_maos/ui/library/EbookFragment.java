@@ -16,9 +16,9 @@ import com.dicoding.picodiploma.e_maos.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Ebook extends Fragment {
+public class EbookFragment extends Fragment {
 
-    public Ebook() {
+    public EbookFragment() {
         // Required empty public constructor
     }
 

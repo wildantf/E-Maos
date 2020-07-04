@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.e_maos;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,56 +12,75 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegisterActivity extends AppCompatActivity {
-    DatabaseHelper db;
+import com.dicoding.picodiploma.e_maos.LoginActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-    Button register;
-    EditText username,password, passwordConfirm;
-    TextView login;
+public class  RegisterActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    private EditText etUsername, etDate, etEmail, etPassword, etCPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        db = new DatabaseHelper(this);
-        username =(EditText)findViewById(R.id.editText_username);
-        password =(EditText)findViewById(R.id.editText_password);
-        passwordConfirm =(EditText)findViewById(R.id.editText_passwordConfirmation);
-        login = (TextView) findViewById(R.id.textView_loginRegis);
-        register = (Button)findViewById(R.id.btn_registerRegis);
+        TextView login = findViewById(R.id.act_login);
 
-        //        Login
-        login.setOnClickListener(new View.OnClickListener() {
+        mAuth = FirebaseAuth.getInstance();
+
+        final Button btnRegister = findViewById(R.id.btnregis);
+
+        etUsername = findViewById(R.id.username);
+        etDate = findViewById(R.id.dateof);
+        etEmail = findViewById(R.id.editTextEmail);
+        etPassword = findViewById(R.id.RPassword);
+        etCPassword = findViewById(R.id.RKPassword);
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginIntent= new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(loginIntent);
-                finish();
-            }
-        });
 
-//        register
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String strUsername = username.getText().toString();
-                String strPassword = password.getText().toString();
-                String strPasswordConfirm = passwordConfirm.getText().toString();
-                if(strPassword.equals(strPasswordConfirm)){
-                    Boolean daftar = db.insertUser(strUsername,strPassword);
-                    if(daftar == true){
-                        Toast.makeText(getApplicationContext(), "Daftar Berhasil", Toast.LENGTH_SHORT).show();
-                        Intent loginIntent= new Intent(RegisterActivity.this, LoginActivity.class);
-                        startActivity(loginIntent);
-                        finish();
-                    }else{
-                        Toast.makeText(getApplicationContext(), "Daftar Gagal", Toast.LENGTH_SHORT).show();
-                    }
-                }else{
-                    Toast.makeText(getApplicationContext(), "Password Tidak Cocok", Toast.LENGTH_SHORT).show();
+                final String username = etUsername.getText().toString();
+                final String date = etDate.getText().toString();
+                final String email = etEmail.getText().toString();
+                final String password = etPassword.getText().toString();
+                final String kpassword = etCPassword.getText().toString();
+
+                if(username.equals("") || date.equals("") || email.equals("") || password.equals("") || kpassword.equals("")){
+                    Toast.makeText(RegisterActivity.this, "Form tidak boleh kosong.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        Toast.makeText(RegisterActivity.this, "Registrasi akun berhasil", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Toast.makeText(RegisterActivity.this, "Registrasi akun gagal", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                 }
             }
         });
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewLogin = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(viewLogin);
+            }
+
+        });
+
+
     }
 }
